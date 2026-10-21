@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Language | Abd Alrahman Abu Alkhair</title>
+    
+    <meta name="description" content="Select Arabic or English Voice Over Demos - Abd Alrahman Abu Alkhair.">
+    <meta property="og:title" content="Voice Over Demos | Abd Alrahman Abu Alkhair">
+    <meta property="og:description" content="Listen to broadcast-quality Arabic and English voice over reels.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#f5a623">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23f5a623'/><text x='50%25' y='55%25' font-family='sans-serif' font-weight='800' font-size='52' fill='%23000' dominant-baseline='middle' text-anchor='middle'>AA</text></svg>">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #0a0f16; --surface-color: #151e2b; --primary-color: #f5a623; --text-main: #f0f6fc; --text-muted: #8b949e; --transition: all 0.3s ease; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scrollbar-width: thin; scrollbar-color: #2a3546 var(--bg-color); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: #2a3546; border-radius: 10px; transition: var(--transition); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
+
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; padding-top: 100px; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; cursor: none; }
+        nav, footer { cursor: auto; }
+        a, button, .hamburger, .lang-card, .floating-wa { cursor: pointer; }
+
+        .preloader { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
+            background-color: var(--bg-color); z-index: 10000; 
+            display: flex; justify-content: center; align-items: center; 
+            transition: opacity 0.6s ease, visibility 0.6s; 
+            animation: forceHidePreloader 0.6s ease 1.5s forwards; 
+        }
+        .preloader.fade-out { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+        @keyframes forceHidePreloader { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+
+        .preloader-icon { width: 80px; height: 80px; font-size: 2.5rem; animation: pulse-heartbeat 0.8s infinite alternate; }
+        @keyframes pulse-heartbeat { 0% { transform: scale(0.9); box-shadow: 0 0 10px rgba(245, 166, 35, 0.3); } 100% { transform: scale(1.15); box-shadow: 0 0 40px rgba(245, 166, 35, 0.9); } }
+
+        .cursor-dot { position: fixed; top: 0; left: 0; width: 8px; height: 8px; background-color: #ffffff; box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 999999; transition: opacity 0.2s ease; }
+        @media (pointer: coarse) { body { cursor: auto; } .cursor-dot { display: none; } }
+
+        nav { position: fixed; top: 0; width: 100%; background: rgba(10, 15, 22, 0.9); backdrop-filter: blur(10px); padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .logo { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-icon { background: linear-gradient(135deg, var(--primary-color), #ffcc70); color: #000; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; border-radius: 12px; font-weight: 700; font-size: 1.4rem; letter-spacing: -1px; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3); transition: var(--transition); }
+        .logo-text { display: flex; flex-direction: column; justify-content: center; }
+        .logo-text .name { color: var(--text-main); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.5px; line-height: 1.2; }
+        .logo-text .title { color: var(--text-muted); font-size: 0.7rem; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; margin-top: 2px; }
+
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease; display: inline-block; }
+        .nav-links a:hover { color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); transform: translateY(-2px); }
+
+        .hamburger { display: none; flex-direction: column; gap: 6px; z-index: 1001; }
+        .hamburger span { width: 30px; height: 3px; background-color: var(--text-main); border-radius: 3px; transition: all 0.3s ease; }
+
+        .section-container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; flex: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; }
+        .section-title { font-size: 2.8rem; margin-bottom: 60px; text-align: center; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 4px; background-color: var(--primary-color); display: block; margin: 15px auto 0; border-radius: 2px; }
+
+        .lang-grid { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+        
+        .lang-card { 
+            flex: 1; 
+            min-width: 280px; 
+            max-width: 420px; 
+            background: linear-gradient(145deg, #151e2b, #0d131c);
+            padding: 70px 40px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.03); 
+            text-align: center; 
+            text-decoration: none; 
+            color: var(--text-main); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative; 
+            overflow: hidden; 
+            transition: all 0.4s ease;
+        }
+        
+        .lang-card::before {
+            content: ''; position: absolute; top: -30px; right: -30px; width: 120px; height: 120px;
+            background: var(--primary-color); filter: blur(60px); opacity: 0.15; transition: opacity 0.4s ease;
+        }
+
+        .lang-card:hover { 
+            transform: translateY(-10px); 
+            border-color: rgba(245, 166, 35, 0.2); 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(245, 166, 35, 0.05); 
+        }
+        
+        .lang-card:hover::before { opacity: 0.3; }
+        .lang-card:active { transform: translateY(2px) scale(0.98); }
+        
+        .lang-card h3 { font-size: 2.5rem; margin-bottom: 15px; color: var(--primary-color); position: relative; z-index: 1; }
+        .lang-card p { color: var(--text-muted); font-size: 1.1rem; position: relative; z-index: 1; }
+
+        .floating-wa { position: fixed; bottom: 30px; right: 30px; background-color: var(--primary-color); color: #000; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4); z-index: 9999; transition: all 0.3s ease; animation: pulse-wa 2s infinite; }
+        .floating-wa:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(245, 166, 35, 0.6); animation: none; }
+        @keyframes pulse-wa { 0% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(245, 166, 35, 0); } 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0); } }
+
+        .footer { background-color: transparent; padding: 60px 20px 30px; margin-top: auto; }
+        .footer-content { display: flex; justify-content: center; align-items: center; margin-bottom: 40px; }
+        .footer-icon { width: 65px; height: 65px; font-size: 2rem; box-shadow: 0 0 15px rgba(245, 166, 35, 0.5); transition: all 0.3s ease; }
+        .footer-icon:hover { box-shadow: 0 0 30px rgba(245, 166, 35, 0.9); transform: scale(1.1); }
+        .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.85rem; max-width: 1100px; margin: 0 auto; }
+
+        .hidden-element { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .show-element { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.3s; }
+
+        @media (max-width: 768px) { 
+            nav { padding: 15px 20px; } 
+            .logo-icon { width: 38px; height: 38px; font-size: 1.2rem; }
+            .logo-text .name { font-size: 0.95rem; }
+            .logo-text .title { font-size: 0.65rem; }
+            .section-title { font-size: 2rem; }
+            .hamburger { display: flex; }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh; background: rgba(15, 23, 34, 0.98); backdrop-filter: blur(15px); flex-direction: column; justify-content: center; align-items: center; transition: right 0.4s ease; border-left: 1px solid rgba(255,255,255,0.05); box-shadow: -10px 0 30px rgba(0,0,0,0.5); }
+            .nav-links.active { right: 0; }
+            .nav-links a { margin: 25px 0; font-size: 1.2rem; }
+            .hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+            .floating-wa { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+            .floating-wa svg { width: 25px; height: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="logo-icon preloader-icon">AA</div>
+    </div>
+
+    <div class="cursor-dot"></div>
+
+    <nav>
+        <a href="vo-site.html" class="logo">
+            <div class="logo-icon">AA</div>
+            <div class="logo-text">
+                <span class="name">Abd Alrahman Abu Alkhair</span>
+                <span class="title">Voice Over Artist</span>
+            </div>
+        </a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+        <div class="nav-links">
+            <a href="vo-site.html">Home</a>
+            <a href="vo-site.html#about">About & Gear</a>
+            <a href="vo-site.html#process">Process</a>
+            <a href="vo-site.html#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="section-container">
+        <h2 class="section-title hidden-element">Choose Demo Language</h2>
+        <div class="lang-grid">
+            <!-- الإنجليزي على الشمال -->
+            <a href="english-demos.html" class="lang-card hidden-element delay-1">
+                <h3>English</h3>
+                <p>English Voice Over Demos</p>
+            </a>
+            <!-- العربي على اليمين -->
+            <a href="arabic-demos.html" class="lang-card hidden-element delay-2">
+                <h3>العربية</h3>
+                <p>Arabic Voice Over Demos</p>
+            </a>
+        </div>
+    </section>
+
+    <a href="https://wa.me/201090611472" target="_blank" class="floating-wa" title="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor"><path d="M16.05 2.15c-7.65 0-13.9 6.25-13.9 13.9 0 2.45.65 4.8 1.85 6.9L2.1 29.9l7.1-1.85c2.05 1.15 4.35 1.8 6.85 1.8 7.65 0 13.9-6.25 13.9-13.9s-6.25-13.9-13.9-13.9zM16.05 27.5c-2.15 0-4.25-.55-6.1-1.6l-.45-.25-4.5 1.2 1.2-4.4-.3-.45c-1.15-1.9-1.8-4.1-1.8-6.35 0-6.35 5.15-11.5 11.5-11.5s11.5 5.15 11.5 11.5-5.15 11.5-11.5 11.5zm6.3-8.6c-.35-.15-2.05-1-2.35-1.15-.3-.1-.55-.15-.75.15-.25.35-.9 1.15-1.1 1.4-.2.25-.4.25-.75.1-2.2-1-3.8-2.65-4.85-4.45-.15-.25 0-.4.15-.55.15-.15.35-.4.5-.6.15-.2.2-.35.3-.55.1-.2.05-.4-.05-.55-.1-.15-.75-1.85-1.05-2.55-.3-.65-.6-.55-.75-.55h-.65c-.25 0-.65.1-.95.4-.3.35-1.15 1.15-1.15 2.8s1.2 3.25 1.35 3.45c.15.2 2.35 3.6 5.7 5.05 2.25.95 3.1.9 4.25.75 1.15-.15 2.05-.85 2.35-1.65.3-.8.3-1.5.2-1.65-.1-.15-.3-.25-.65-.4z"/></svg>
+    </a>
+
+    <footer class="footer">
+        <div class="footer-content hidden-element">
+            <a href="vo-site.html" style="text-decoration: none;" title="Back to Home"><div class="logo-icon footer-icon">AA</div></a>
+        </div>
+        <div class="footer-bottom hidden-element delay-1"><p>&copy; 2025 Abd Alrahman Abu Alkhair. All rights reserved.</p></div>
+    </footer>
+
+    <script>
+        const hidePreloader = () => {
+            const preloader = document.querySelector('.preloader');
+            if (preloader) preloader.classList.add('fade-out');
+        };
+        document.addEventListener('DOMContentLoaded', () => setTimeout(hidePreloader, 700));
+        setTimeout(hidePreloader, 1200);
+
+        const cursorDot = document.querySelector('.cursor-dot');
+        window.addEventListener('mousemove', (e) => { cursorDot.style.left = `${e.clientX}px`; cursorDot.style.top = `${e.clientY}px`; });
+        window.addEventListener('mouseover', (e) => {
+            if (e.target.closest('nav, footer, a, button, .hamburger, .lang-card, .floating-wa')) { cursorDot.style.opacity = '0'; } else { cursorDot.style.opacity = '1'; }
+        });
+        const hamburger = document.querySelector('.hamburger'); const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navLinks.classList.toggle('active'); });
+        document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('active'); navLinks.classList.remove('active'); }); });
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('show-element'); } }); }, { threshold: 0.1 });
+        const hiddenElements = document.querySelectorAll('.hidden-element'); hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>

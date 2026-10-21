@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abd Alrahman Abu Alkhair | Professional Voice Over</title>
+    
+    <meta name="description" content="Premium Bilingual Arabic & English Voice Over Artist for Commercials, Documentaries, and Corporate Brands.">
+    <meta property="og:title" content="Abd Alrahman Abu Alkhair | Professional Voice Over Artist">
+    <meta property="og:description" content="Bringing scripts to life with broadcast-quality Arabic & English voice over. Listen to my latest demos.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#f5a623">
+
+    <!-- أيقونة التاب المدمجة (اللون الذهبي) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23f5a623'/><text x='50%25' y='55%25' font-family='sans-serif' font-weight='800' font-size='52' fill='%23000' dominant-baseline='middle' text-anchor='middle'>AA</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #070a0f;
+            --surface-color: #151e2b;
+            --primary-color: #f5a623;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #2a3546 var(--bg-color); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-color); }
+        ::-webkit-scrollbar-thumb { background: #2a3546; border-radius: 10px; transition: var(--transition); }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
+
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; overflow-x: hidden; cursor: none; }
+        nav, footer { cursor: auto; }
+        a, button, .hamburger, .floating-wa { cursor: pointer; }
+
+        .preloader { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
+            background-color: var(--bg-color); z-index: 10000; 
+            display: flex; justify-content: center; align-items: center; 
+            transition: opacity 0.6s ease, visibility 0.6s; 
+            animation: forceHidePreloader 0.6s ease 1.5s forwards; 
+        }
+        .preloader.fade-out { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+        @keyframes forceHidePreloader { to { opacity: 0; visibility: hidden; pointer-events: none; } }
+
+        .preloader-icon { width: 80px; height: 80px; font-size: 2.5rem; animation: pulse-heartbeat 0.8s infinite alternate; }
+        @keyframes pulse-heartbeat { 0% { transform: scale(0.9); box-shadow: 0 0 10px rgba(245, 166, 35, 0.3); } 100% { transform: scale(1.15); box-shadow: 0 0 40px rgba(245, 166, 35, 0.9); } }
+
+        .cursor-dot { position: fixed; top: 0; left: 0; width: 8px; height: 8px; background-color: #ffffff; box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); border-radius: 50%; transform: translate(-50%, -50%); pointer-events: none; z-index: 999999; transition: opacity 0.2s ease; }
+        @media (pointer: coarse) { body { cursor: auto; } .cursor-dot { display: none; } }
+
+        nav { position: fixed; top: 0; width: 100%; background: rgba(7, 10, 15, 0.85); backdrop-filter: blur(12px); padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .logo { display: flex; align-items: center; gap: 15px; text-decoration: none; }
+        .logo-icon { background: linear-gradient(135deg, var(--primary-color), #ffcc70); color: #000; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; border-radius: 12px; font-weight: 700; font-size: 1.4rem; letter-spacing: -1px; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3); transition: var(--transition); }
+        .logo:hover .logo-icon { transform: scale(1.05) rotate(-5deg); box-shadow: 0 6px 20px rgba(245, 166, 35, 0.5); }
+        .logo-text { display: flex; flex-direction: column; justify-content: center; }
+        .logo-text .name { color: var(--text-main); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.5px; line-height: 1.2; }
+        .logo-text .title { color: var(--text-muted); font-size: 0.7rem; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; margin-top: 2px; }
+
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 30px; font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease; display: inline-block; }
+        .nav-links a:hover { color: #ffffff; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4); transform: translateY(-2px); }
+
+        .hamburger { display: none; flex-direction: column; gap: 6px; z-index: 1001; }
+        .hamburger span { width: 30px; height: 3px; background-color: var(--text-main); border-radius: 3px; transition: all 0.3s ease; }
+
+        .hero { height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 20px; background-color: var(--bg-color); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%); width: 650px; height: 650px; background: radial-gradient(circle, rgba(245, 166, 35, 0.2) 0%, rgba(245, 166, 35, 0.06) 45%, rgba(7, 10, 15, 0) 70%); filter: blur(55px); z-index: 0; pointer-events: none; animation: spotlight-pulse 5s ease-in-out infinite alternate; }
+        .hero::after { content: ''; position: absolute; top: -15%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(245, 166, 35, 0.1) 0%, transparent 70%); filter: blur(80px); z-index: 0; pointer-events: none; }
+        @keyframes spotlight-pulse { 0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.8; } 100% { transform: translate(-50%, -50%) scale(1.08); opacity: 1; } }
+
+        .hero h1 { font-size: 4.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 20px; background: linear-gradient(90deg, #f5a623, #ffcc70); -webkit-background-clip: text; -webkit-text-fill-color: transparent; position: relative; z-index: 1; }
+        .hero p { font-size: 1.5rem; color: var(--text-muted); margin-bottom: 40px; max-width: 650px; position: relative; z-index: 1; }
+        .hero .btn-wrapper { position: relative; z-index: 1; }
+        .btn { padding: 15px 35px; background-color: var(--primary-color); color: #000; text-decoration: none; font-weight: 700; border-radius: 30px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); font-size: 1.1rem; border: 2px solid var(--primary-color); display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); font-family: inherit; }
+        .btn:hover { background-color: transparent; color: var(--primary-color); box-shadow: 0 8px 25px rgba(245, 166, 35, 0.4); transform: translateY(-3px); }
+        .btn:active { transform: translateY(2px) scale(0.95); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); filter: brightness(0.9); }
+
+        .marquee-wrapper { width: 100%; overflow: hidden; background-color: rgba(21, 30, 43, 0.3); padding: 15px 0; border-top: 1px solid rgba(255,255,255,0.03); border-bottom: 1px solid rgba(255,255,255,0.03); display: flex; align-items: center; position: relative; z-index: 2; }
+        .marquee-content { display: flex; white-space: nowrap; animation: scroll-marquee 25s linear infinite; }
+        .marquee-wrapper:hover .marquee-content { animation-play-state: paused; }
+        .marquee-item { font-size: 1.1rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px; margin: 0 20px; transition: color 0.3s ease; }
+        .marquee-wrapper:hover .marquee-item { color: var(--text-main); }
+        .marquee-dot { color: var(--primary-color); font-size: 1.2rem; margin: 0 20px; }
+        @keyframes scroll-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
+        .section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 4px; background-color: var(--primary-color); display: block; margin: 15px auto 0; border-radius: 2px; }
+
+        .about-layout {
+            display: flex;
+            gap: 50px;
+            align-items: center; 
+            flex-wrap: wrap;
+        }
+
+        .about-image-col {
+            flex: 0 0 420px;
+            position: relative;
+        }
+
+        .pro-image-frame {
+            position: relative;
+            background: linear-gradient(145deg, #131b26, #0b1017);
+            padding: 15px; 
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            transition: all 0.4s ease;
+        }
+
+        .pro-image-frame:hover {
+            transform: translateY(-10px);
+            border-color: rgba(245, 166, 35, 0.2);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 30px rgba(245, 166, 35, 0.1);
+        }
+
+        .pro-image-frame::before {
+            content: ''; position: absolute; top: -8px; left: -8px; width: 80px; height: 80px;
+            border-top: 3px solid var(--primary-color); border-left: 3px solid var(--primary-color);
+            border-radius: 30px 0 0 0; z-index: 0; box-shadow: -5px -5px 20px rgba(245, 166, 35, 0.15);
+            transition: all 0.4s ease;
+        }
+        .pro-image-frame::after {
+            content: ''; position: absolute; bottom: -8px; right: -8px; width: 80px; height: 80px;
+            border-bottom: 3px solid var(--primary-color); border-right: 3px solid var(--primary-color);
+            border-radius: 0 0 30px 0; z-index: 0; box-shadow: 5px 5px 20px rgba(245, 166, 35, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .pro-image-frame:hover::before { width: 100px; height: 100px; border-width: 4px; box-shadow: -5px -5px 30px rgba(245, 166, 35, 0.3); }
+        .pro-image-frame:hover::after { width: 100px; height: 100px; border-width: 4px; box-shadow: 5px 5px 30px rgba(245, 166, 35, 0.3); }
+
+        .img-inner {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            aspect-ratio: 3 / 4; 
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .pro-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .pro-image-frame:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            min-width: 300px;
+        }
+
+        .info-box { 
+            background: linear-gradient(145deg, #131b26, #0b1017);
+            padding: 40px; border-radius: 20px; 
+            border: 1px solid rgba(255, 255, 255, 0.04); 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            position: relative; overflow: hidden; transition: all 0.4s ease;
+        }
+        .info-box::before { content: ''; position: absolute; top: -40px; right: -40px; width: 140px; height: 140px; background: var(--primary-color); filter: blur(65px); opacity: 0.14; transition: opacity 0.4s ease; }
+        .info-box:hover { transform: translateX(10px); border-color: rgba(245, 166, 35, 0.2); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(245, 166, 35, 0.07); }
+        .info-box:hover::before { opacity: 0.28; }
+        .info-box h3 { color: var(--text-main); margin-bottom: 25px; font-size: 1.6rem; position: relative; display: inline-block; }
+        .info-box h3::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 40px; height: 3px; background: var(--primary-color); border-radius: 2px; transition: width 0.3s ease; }
+        .info-box:hover h3::after { width: 100%; }
+        .info-box p { color: var(--text-muted); text-align: left; line-height: 1.8; font-size: 1.05rem; position: relative; z-index: 1; }
+
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .step-card { background: linear-gradient(145deg, #131b26, #0b1017); padding: 45px 35px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.04); position: relative; overflow: hidden; transition: all 0.4s ease; text-align: left; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); }
+        .step-card:hover { transform: translateY(-10px); border-color: rgba(245, 166, 35, 0.2); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(245, 166, 35, 0.07); }
+        .step-number { font-size: 3.8rem; font-weight: 700; color: rgba(245, 166, 35, 0.12); line-height: 1; margin-bottom: 15px; transition: all 0.4s ease; }
+        .step-card:hover .step-number { color: var(--primary-color); text-shadow: 0 0 20px rgba(245, 166, 35, 0.4); transform: scale(1.05); transform-origin: left; }
+        .step-card h3 { font-size: 1.4rem; color: var(--text-main); margin-bottom: 12px; }
+        .step-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
+
+        .contact-section { text-align: center; background: linear-gradient(145deg, #131b26, #0b1017); border: 1px solid rgba(255,255,255,0.04); padding: 80px 20px; border-radius: 20px; margin-bottom: 50px; position: relative; overflow: hidden; }
+        .contact-section p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 30px; }
+
+        .floating-wa { position: fixed; bottom: 30px; right: 30px; background-color: var(--primary-color); color: #000; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.4); z-index: 9999; transition: all 0.3s ease; animation: pulse-wa 2s infinite; }
+        .floating-wa:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(245, 166, 35, 0.6); animation: none; }
+        @keyframes pulse-wa { 0% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(245, 166, 35, 0); } 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0); } }
+
+        .footer { background-color: transparent; padding: 60px 20px 30px; margin-top: 20px; }
+        .footer-content { display: flex; justify-content: center; align-items: center; margin-bottom: 40px; }
+        .footer-icon { width: 65px; height: 65px; font-size: 2rem; box-shadow: 0 0 15px rgba(245, 166, 35, 0.5); transition: all 0.3s ease; }
+        .footer-icon:hover { box-shadow: 0 0 30px rgba(245, 166, 35, 0.9); transform: scale(1.1); }
+        .footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.85rem; max-width: 1100px; margin: 0 auto; }
+
+        .hidden-element { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .show-element { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.3s; }
+        .delay-3 { transition-delay: 0.5s; }
+
+        @media (max-width: 900px) {
+            .about-layout { flex-direction: column; align-items: center; }
+            .about-image-col { flex: 1 1 100%; max-width: 350px; width: 100%; margin: 0 auto; }
+            .info-box:hover { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .hero p { font-size: 1.1rem; }
+            .hero::before { width: 380px; height: 380px; }
+            nav { padding: 15px 20px; }
+            .logo-icon { width: 38px; height: 38px; font-size: 1.2rem; }
+            .logo-text .name { font-size: 0.95rem; }
+            .logo-text .title { font-size: 0.65rem; }
+            .hamburger { display: flex; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%; width: 70%; max-width: 300px; height: 100vh;
+                background: rgba(15, 23, 34, 0.98); backdrop-filter: blur(15px);
+                flex-direction: column; justify-content: center; align-items: center;
+                transition: right 0.4s ease; border-left: 1px solid rgba(255,255,255,0.05);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { margin: 25px 0; font-size: 1.2rem; }
+            .hamburger.active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+            .floating-wa { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+            .floating-wa svg { width: 25px; height: 25px; }
+            .marquee-item { font-size: 0.9rem; margin: 0 10px; }
+            .marquee-dot { margin: 0 10px; }
+            .info-box { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="logo-icon preloader-icon">AA</div>
+    </div>
+
+    <div class="cursor-dot"></div>
+
+    <nav>
+        <a href="vo-site.html" class="logo">
+            <div class="logo-icon">AA</div>
+            <div class="logo-text">
+                <span class="name">Abd Alrahman Abu Alkhair</span>
+                <span class="title">Voice Over Artist</span>
+            </div>
+        </a>
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-links">
+            <a href="demos.html">Demos</a>
+            <a href="#about">About & Gear</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 class="hidden-element delay-1">Bringing Scripts to Life</h1>
+        <p class="hidden-element delay-2">Premium Bilingual Arabic & English Voice Over for Commercials, Documentaries, and Corporate Brands.</p>
+        <div class="btn-wrapper hidden-element delay-3">
+            <a href="demos.html" class="btn">Listen to Demos</a>
+        </div>
+    </header>
+
+    <div class="marquee-wrapper hidden-element">
+        <div class="marquee-content">
+            <span class="marquee-item">TV Commercials</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">Documentaries</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">Corporate Videos</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">E-Learning</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">Audiobooks</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">IVR & Voicemail</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">Motion Graphics</span> <span class="marquee-dot">•</span>
+            
+            <span class="marquee-item">TV Commercials</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">Documentaries</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">Corporate Videos</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">E-Learning</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">Audiobooks</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">IVR & Voicemail</span> <span class="marquee-dot">•</span>
+            <span class="marquee-item">Motion Graphics</span> <span class="marquee-dot">•</span>
+        </div>
+    </div>
+
+    <section id="about" class="section-container" style="padding-bottom: 50px;">
+        <h2 class="section-title hidden-element">The Professional Edge</h2>
+        
+        <div class="about-layout">
+            
+            <div class="about-image-col hidden-element delay-1">
+                <div class="pro-image-frame">
+                    <div class="img-inner">
+                        <img src="profile.jpg" alt="Abd Alrahman Abu Alkhair">
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-text-col">
+                <div class="info-box hidden-element delay-2">
+                    <h3>About Me</h3>
+                    <p>I’m Abd Alrahman Abu Alkhair, a professional Voice Over Artist and audio storyteller holding a Bachelor's degree in Petroleum and Mining Engineering. For me, voice over is about breathing life into words, delivering authentic emotion that connects with your audience and elevates your brand.</p>
+                </div>
+
+                <div class="info-box hidden-element delay-3">
+                    <h3>Studio & Engineering</h3>
+                    <p>Every recording is produced in a broadcast-quality, acoustically treated environment. Using <strong>Adobe Audition</strong>, I meticulously apply EQ, precise compression, and auto-ducking to deliver crystal-clear, ready-to-use audio files that meet rigorous international industry standards.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="process" class="section-container" style="padding-top: 50px; padding-bottom: 50px;">
+        <h2 class="section-title hidden-element">How It Works</h2>
+        <div class="steps-grid">
+            
+            <div class="step-card hidden-element delay-1">
+                <div class="step-number">01</div>
+                <h3>Send the Script</h3>
+                <p>Share your script, project details, and desired vocal tone via WhatsApp or Email for an instant review.</p>
+            </div>
+
+            <div class="step-card hidden-element delay-2">
+                <div class="step-number">02</div>
+                <h3>Studio Recording</h3>
+                <p>I record and engineer your voice over in my treated studio using broadcast-grade equipment and processing.</p>
+            </div>
+
+            <div class="step-card hidden-element delay-3">
+                <div class="step-number">03</div>
+                <h3>Fast Delivery</h3>
+                <p>Receive crystal-clear, mastered, and ready-to-use audio files delivered right on schedule within 24 hours.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="section-container">
+        <div class="contact-section hidden-element">
+            <h2 class="section-title" style="margin-bottom: 20px;">Ready to Start Recording?</h2>
+            <p>Available for immediate booking. Let's discuss how my voice can elevate your next project.</p>
+            
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+                <!-- الزرار هنا رجع للون الذهبي زيه زي اللي جنبه -->
+                <a href="https://wa.me/201090611472" target="_blank" class="btn">Chat on WhatsApp</a>
+                <a href="mailto:abdalrahmanabualkhair@gmail.com" class="btn">Send an Email</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content hidden-element">
+            <a href="vo-site.html" style="text-decoration: none;" title="Back to Home">
+                <div class="logo-icon footer-icon">AA</div>
+            </a>
+        </div>
+        <div class="footer-bottom hidden-element delay-1">
+            <p>&copy; 2026 Abd Alrahman Abu Alkhair. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- أيقونة الواتساب العائمة (نحتفظ بها بالذهبي) -->
+    <a href="https://wa.me/201090611472" target="_blank" class="floating-wa" title="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor">
+            <path d="M16.05 2.15c-7.65 0-13.9 6.25-13.9 13.9 0 2.45.65 4.8 1.85 6.9L2.1 29.9l7.1-1.85c2.05 1.15 4.35 1.8 6.85 1.8 7.65 0 13.9-6.25 13.9-13.9s-6.25-13.9-13.9-13.9zM16.05 27.5c-2.15 0-4.25-.55-6.1-1.6l-.45-.25-4.5 1.2 1.2-4.4-.3-.45c-1.15-1.9-1.8-4.1-1.8-6.35 0-6.35 5.15-11.5 11.5-11.5s11.5 5.15 11.5 11.5-5.15 11.5-11.5 11.5zm6.3-8.6c-.35-.15-2.05-1-2.35-1.15-.3-.1-.55-.15-.75.15-.25.35-.9 1.15-1.1 1.4-.2.25-.4.25-.75.1-2.2-1-3.8-2.65-4.85-4.45-.15-.25 0-.4.15-.55.15-.15.35-.4.5-.6.15-.2.2-.35.3-.55.1-.2.05-.4-.05-.55-.1-.15-.75-1.85-1.05-2.55-.3-.65-.6-.55-.75-.55h-.65c-.25 0-.65.1-.95.4-.3.35-1.15 1.15-1.15 2.8s1.2 3.25 1.35 3.45c.15.2 2.35 3.6 5.7 5.05 2.25.95 3.1.9 4.25.75 1.15-.15 2.05-.85 2.35-1.65.3-.8.3-1.5.2-1.65-.1-.15-.3-.25-.65-.4z"/>
+        </svg>
+    </a>
+
+    <script>
+        const hidePreloader = () => {
+            const preloader = document.querySelector('.preloader');
+            if (preloader) preloader.classList.add('fade-out');
+        };
+        document.addEventListener('DOMContentLoaded', () => setTimeout(hidePreloader, 700));
+        setTimeout(hidePreloader, 1200);
+
+        const cursorDot = document.querySelector('.cursor-dot');
+        window.addEventListener('mousemove', (e) => {
+            cursorDot.style.left = `${e.clientX}px`;
+            cursorDot.style.top = `${e.clientY}px`;
+        });
+        window.addEventListener('mouseover', (e) => {
+            if (e.target.closest('nav, footer, a, button, .hamburger, .floating-wa, .marquee-wrapper')) {
+                cursorDot.style.opacity = '0';
+            } else { cursorDot.style.opacity = '1'; }
+        });
+
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) { entry.target.classList.add('show-element'); }
+            });
+        }, { threshold: 0.1 });
+        const hiddenElements = document.querySelectorAll('.hidden-element');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
